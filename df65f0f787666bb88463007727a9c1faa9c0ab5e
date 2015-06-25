@@ -1,0 +1,9 @@
+Verified+2: Jenkins
+Code-Review+2: Szymon Banka <sbanka@mirantis.com>
+Workflow+1: Szymon Banka <sbanka@mirantis.com>
+Code-Review+1: Tatyana Dubyk <tdubyk@mirantis.com>
+Submitted-by: Jenkins
+Submitted-at: Thu, 25 Jun 2015 11:43:04 +0000
+Reviewed-on: https://review.openstack.org/194118
+Project: stackforge/fuel-plugin-zabbix-monitoring-emc
+Branch: refs/heads/master
