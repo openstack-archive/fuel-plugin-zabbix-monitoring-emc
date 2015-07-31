@@ -14,7 +14,7 @@
 #    under the License.
 #
 class plugin_zabbix_monitoring_emc(
-  $host_group = 'EMC',
+  $host_group = ['EMC','Hardware'],
 )
 {
 

@@ -14,7 +14,7 @@
 #    under the License.
 #
 define plugin_zabbix_monitoring_emc::emc_host(
-  $host_group = 'EMC',
+  $host_group = ['EMC', 'Hardware'],
 ) {
 
   $host = split($name,':')
