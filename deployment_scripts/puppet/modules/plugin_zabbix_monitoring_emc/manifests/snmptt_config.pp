@@ -42,6 +42,8 @@ class plugin_zabbix_monitoring_emc::snmptt_config {
   service { 'snmptt':
     ensure     => running,
     enable     => true,
+    hasstatus  => false,
+    status     => 'pgrep snmptt',
   }
 
 }
