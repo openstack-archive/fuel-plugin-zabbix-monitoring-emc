@@ -21,7 +21,8 @@ steps:
    that. If you do not have the Fuel Master node yet, see `Quick Start Guide
    <https://software.mirantis.com/quick-start/>`_::
 
-    # scp zabbix_monitoring_emc-1.0-1.0.0-1.noarch.rpm root@<The_Fuel_Master_node_IP>:/tmp
+    # scp zabbix_monitoring_emc-1.0-1.0.0-1.noarch.rpm \
+      root@<The_Fuel_Master_node_IP>:/tmp
 
 5. Log into the Fuel Master node. Install the plugin::
 
