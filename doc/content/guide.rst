@@ -19,6 +19,7 @@ Environment configuration
    plugin checkbox and optionally fill in *EMC hardware to monitor* parameter:
 
    .. image:: images/settings.png
+      :width: 100%
 
    When you add your hardware to the *EMC hardware to monitor* comma separated
    list, then the plugin will automatically configure monitoring for these
@@ -42,7 +43,10 @@ To test if everything is configured properly, follow these steps:
 1. Generate an example SNMP trap by running the following command from any
    node::
 
-       [root@node-46 ~]# snmptrap -v 1 -c <SNMP_community> <zabbix_VIP_address> '.1.3.6.1.4.1.1981' <host_ip_address> 6 6 '10' .1.3.6.1.4.1.1981 s "null" .1.3.6.1.4.1.1981 s "null" .1.3.6.1.4.1.1981 s "a37"
+       [root@node-46 ~]# snmptrap -v 1 -c <SNMP_community> \
+       <zabbix_VIP_address> '.1.3.6.1.4.1.1981' <host_ip_address> 6 6 '10' \
+       .1.3.6.1.4.1.1981 s "null" .1.3.6.1.4.1.1981 s "null" \
+       .1.3.6.1.4.1.1981 s "a37"
 
    where:
 
@@ -51,6 +55,7 @@ To test if everything is configured properly, follow these steps:
        It is set in the SNMP trap daemon for Zabbix plugin Settings in Fuel UI:
 
    .. image:: images/snmptrapd_settings.png
+      :width: 100%
 
    *<zabbix_VIP_address>*
 
@@ -76,17 +81,20 @@ To test if everything is configured properly, follow these steps:
    openstack-drivers-and-plugins/fuel-plugins/>`_):
 
    .. image:: images/issues.png
+      :width: 100%
 
    When you click on a date in the *Last change* column of one of the issues,
    you will see the **Events** page with list of events with the same type:
 
    .. image:: images/events.png
+      :width: 100%
 
    To see a full description of the event, you have to click on event’s
    description and choose *History*, then you will see a **History** page with
    a full event description:
 
    .. image:: images/history.png
+      :width: 100%
 
 3. After clicking *Configuration* tab and selecting *Hosts* option, you will
    see a list of hosts with linked monitoring templates. There should be one
@@ -94,6 +102,7 @@ To test if everything is configured properly, follow these steps:
    parameter:
 
    .. image:: images/hosts.png
+      :width: 100%
 
 Hardware setup
 ==============
@@ -118,4 +127,5 @@ parameters on your hardware:
    from the SNMP trap daemon for Zabbix plugin settings:
 
    .. image:: images/snmptrapd_settings.png
+      :width: 100%
 
