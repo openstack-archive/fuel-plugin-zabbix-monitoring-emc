@@ -1,0 +1,8 @@
+Verified+2: Jenkins
+Code-Review+2: Bartosz Kupidura <bkupidura@mirantis.com>
+Workflow+1: Bartosz Kupidura <bkupidura@mirantis.com>
+Submitted-by: Jenkins
+Submitted-at: Wed, 02 Sep 2015 13:49:06 +0000
+Reviewed-on: https://review.openstack.org/219690
+Project: stackforge/fuel-plugin-zabbix-monitoring-emc
+Branch: refs/heads/master
