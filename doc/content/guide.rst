@@ -61,11 +61,11 @@ To test if everything is configured properly, follow these steps:
 
        If you don’t know the address, run the following command on any node::
 
-           [root@node-46 ~]# grep -A2 ^zabbix_vip_management /etc/astute.yaml
+           [root@node-46 ~]# grep -A2 ^zbx_vip_mgmt /etc/astute.yaml
 
        You should get the required VIP in the output::
 
-           zabbix_vip_management:
+           zbx_vip_mgmt:
              network_role: zabbix
              ipaddr: 192.168.0.1
 
@@ -115,11 +115,11 @@ parameters on your hardware:
 
    If you don’t know the address, run the following command on any node::
 
-       [root@node-46 ~]# grep -A2 ^zabbix_vip_management /etc/astute.yaml
+       [root@node-46 ~]# grep -A2 ^zbx_vip_mgmt /etc/astute.yaml
 
    You should get the required VIP in the output::
 
-       zabbix_vip_management:
+       zbx_vip_mgmt:
          network_role: zabbix
          ipaddr: 192.168.0.1
 
