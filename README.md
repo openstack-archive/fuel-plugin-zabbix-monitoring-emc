@@ -67,10 +67,16 @@ Release Notes
 
 This is the first release of the plugin.
 
+Build Instructions
+------------------
+
+Instructions how to build a plugin from source are available on:
+[How To: Build and install a plugin from source](https://wiki.openstack.org/wiki/Fuel/Plugins#How_To:_Build_and_install_a_plugin_from_source)
+
 Contributors
 ------------
 
-Dmitry Klenov <dklenov@mirantis.com> (PM)  
-Piotr Misiak <pmisiak@mirantis.com> (developer)  
-Szymon Bańka <sbanka@mirantis.com> (developer)  
-Alexander Zatserklyany <azatserklyany@mirantis.com> (QA engineer)  
+Dmitry Klenov <dklenov@mirantis.com> (PM)
+Piotr Misiak <pmisiak@mirantis.com> (developer)
+Szymon Bańka <sbanka@mirantis.com> (developer)
+Alexander Zatserklyany <azatserklyany@mirantis.com> (QA engineer)
