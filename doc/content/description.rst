@@ -17,8 +17,8 @@ Requirements
 ================================== ===============
 Requirement                        Version/Comment
 ================================== ===============
-Fuel                               7.0
+Fuel                               7.0 or 8.0
 Zabbix plugin for Fuel             2.5.0
-SNMP trap daemon for Zabbix plugin 1.0.0
+SNMP trap daemon for Zabbix plugin 1.0.1
 ================================== ===============
 

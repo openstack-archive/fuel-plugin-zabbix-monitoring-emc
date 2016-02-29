@@ -2,11 +2,11 @@
 name: zabbix_monitoring_emc
 title: EMC hardware monitoring extension for Zabbix plugin
 # Plugin version
-version: 1.0.0
+version: 1.0.1
 # Description
 description: Adds EMC hardware monitoring to Zabbix plugin
 # Required fuel version
-fuel_version: ['7.0']
+fuel_version: ['7.0', '8.0']
 # Groups
 groups: ['monitoring']
 # Licenses
@@ -23,11 +23,11 @@ releases:
     mode: ['ha']
     deployment_scripts_path: deployment_scripts/
     repository_path: repositories/ubuntu
-  - os: centos
-    version: 2015.1.0-7.0
+  - os: ubuntu
+    version: liberty-8.0
     mode: ['ha']
     deployment_scripts_path: deployment_scripts/
-    repository_path: repositories/centos
+    repository_path: repositories/ubuntu
 
 # Version of plugin package
 package_version: '2.0.0'
