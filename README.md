@@ -15,9 +15,9 @@ Requirements
 
 | Requirement                        | Version/Comment |
 |:-----------------------------------|:----------------|
-| Mirantis OpenStack compatibility   | 7.0             |
+| Mirantis OpenStack compatibility   | 7.0 or 8.0      |
 | Zabbix plugin for Fuel             | 2.5.0           |
-| SNMP trap daemon for Zabbix plugin | 1.0.0           |
+| SNMP trap daemon for Zabbix plugin | 1.0.1           |
 
 Installation Guide
 ==================
@@ -47,7 +47,7 @@ follow these steps:
 5. Install the plugin:
 
         # cd /tmp
-        # fuel plugins --install zabbix_monitoring_emc-1.0-1.0.0-1.noarch.rpm
+        # fuel plugins --install zabbix_monitoring_emc-1.0-1.0.1-1.noarch.rpm
 
 6. Check if the plugin was installed successfully:
 
@@ -55,8 +55,8 @@ follow these steps:
         id | name                  | version | package_version
         ---|-----------------------|---------|----------------
         1  | zabbix_monitoring     | 2.5.0   | 3.0.0
-        2  | zabbix_snmptrapd      | 1.0.0   | 2.0.0
-        3  | zabbix_monitoring_emc | 1.0.0   | 2.0.0
+        2  | zabbix_snmptrapd      | 1.0.1   | 2.0.0
+        3  | zabbix_monitoring_emc | 1.0.1   | 2.0.0
 
 For more information and instructions, see the EMC hardware monitoring extension
 for Zabbix plugin Guide in the
@@ -74,3 +74,5 @@ Dmitry Klenov <dklenov@mirantis.com> (PM)
 Piotr Misiak <pmisiak@mirantis.com> (developer)  
 Szymon Bańka <sbanka@mirantis.com> (developer)  
 Alexander Zatserklyany <azatserklyany@mirantis.com> (QA engineer)  
+Swann Croiset <scroiset@mirantis.com> (developer)
+Olivier Bourdon <obourdon@mirantis.com> (developer)

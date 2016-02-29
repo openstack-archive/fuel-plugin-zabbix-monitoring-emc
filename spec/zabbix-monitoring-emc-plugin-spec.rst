@@ -103,6 +103,8 @@ Assignee(s)
 | Piotr Misiak <pmisiak@mirantis.com> (developer)
 | Szymon Bańka <sbanka@mirantis.com> (developer)
 | Alexander Zatserklyany <azatserklyany@mirantis.com> (QA engineer)
+| Swann Croiset <scroiset@mirantis.com> (developer)
+| Olivier Bourdon <obourdon@mirantis.com> (developer)
 
 Work Items
 ----------
@@ -115,9 +117,9 @@ Work Items
 Dependencies
 ============
 
-* Fuel 6.1
-* Zabbix plugin for Fuel 1.0.0
-* SNMP trap daemon for Zabbix plugin 1.0.0
+* Fuel 7.0 or 8.0
+* Zabbix plugin for Fuel 2.5.0
+* SNMP trap daemon for Zabbix plugin 1.0.1
 
 Testing
 =======
