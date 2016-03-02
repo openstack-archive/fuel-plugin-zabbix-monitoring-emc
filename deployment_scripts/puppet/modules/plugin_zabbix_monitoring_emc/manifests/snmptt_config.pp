@@ -16,33 +16,33 @@
 class plugin_zabbix_monitoring_emc::snmptt_config {
 
   file { '/etc/snmp/snmptt.conf.d':
-    ensure     => directory,
-    owner      => 'root',
-    group      => 'root',
-    mode       => '0755',
+    ensure => directory,
+    owner  => 'root',
+    group  => 'root',
+    mode   => '0755',
   }
 
   file { '/etc/snmp/snmptt.conf.d/emc.conf':
-    ensure     => present,
-    owner      => 'root',
-    group      => 'root',
-    mode       => '0644',
-    source     => 'puppet:///modules/plugin_zabbix_monitoring_emc/snmptt_emc.conf',
-    require    => File['/etc/snmp/snmptt.conf.d'],
+    ensure  => present,
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0644',
+    source  => 'puppet:///modules/plugin_zabbix_monitoring_emc/snmptt_emc.conf',
+    require => File['/etc/snmp/snmptt.conf.d'],
   }
 
   file_line { 'add emc.conf config to snmptt.ini':
-    path       => '/etc/snmp/snmptt.ini',
-    after      => 'snmptt_conf_files = <<END',
-    line       => '/etc/snmp/snmptt.conf.d/emc.conf',
-    require    => File['/etc/snmp/snmptt.conf.d/emc.conf'],
-    notify     => Service['snmptt'],
+    path    => '/etc/snmp/snmptt.ini',
+    after   => 'snmptt_conf_files = <<END',
+    line    => '/etc/snmp/snmptt.conf.d/emc.conf',
+    require => File['/etc/snmp/snmptt.conf.d/emc.conf'],
+    notify  => Service['snmptt'],
   }
 
   service { 'snmptt':
-    ensure     => running,
-    enable     => true,
-    hasstatus  => false,
+    ensure    => running,
+    enable    => true,
+    hasstatus => false,
   }
 
 }
