@@ -21,20 +21,20 @@ class plugin_zabbix_monitoring_emc(
   include plugin_zabbix::params
 
   file { '/etc/zabbix/import/Template_EMC_VNX.xml':
-    ensure     => present,
-    source     => 'puppet:///modules/plugin_zabbix_monitoring_emc/Template_EMC_VNX.xml',
+    ensure => present,
+    source => 'puppet:///modules/plugin_zabbix_monitoring_emc/Template_EMC_VNX.xml',
   }
 
   plugin_zabbix_configuration_import { 'Template_EMC_VNX.xml Import':
-    ensure     => present,
-    xml_file   => '/etc/zabbix/import/Template_EMC_VNX.xml',
-    api        => $plugin_zabbix::params::api_hash,
-    require    => File['/etc/zabbix/import/Template_EMC_VNX.xml'],
+    ensure   => present,
+    xml_file => '/etc/zabbix/import/Template_EMC_VNX.xml',
+    api      => $plugin_zabbix::params::api_hash,
+    require  => File['/etc/zabbix/import/Template_EMC_VNX.xml'],
   }
 
   plugin_zabbix_hostgroup {$host_group:
-    ensure     => present,
-    api        => $plugin_zabbix::params::api_hash,
+    ensure => present,
+    api    => $plugin_zabbix::params::api_hash,
   }
 
   $zabbix_monitoring_emc_hash = hiera('zabbix_monitoring_emc')
@@ -42,7 +42,6 @@ class plugin_zabbix_monitoring_emc(
 
   if $hosts_string {
     $hosts = split($hosts_string,',')
-
     if size($hosts) > 0 {
       plugin_zabbix_monitoring_emc::emc_host { $hosts:
         host_group => $host_group,
