@@ -17,7 +17,7 @@ steps:
 3. Download the EMC hardware monitoring extension for Zabbix plugin from the
    `Fuel Plugins Catalog <https://www.mirantis.com/products/
    openstack-drivers-and-plugins/fuel-plugins/>`_.
-4. Copy the plugin on already installed Fuel Master node; ssh can be used for
+4. Copy the plugin on already installed Fuel Master node, ssh can be used for
    that. If you do not have the Fuel Master node yet, see `Quick Start Guide
    <https://software.mirantis.com/quick-start/>`_::
 

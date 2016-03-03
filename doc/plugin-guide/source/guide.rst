@@ -18,7 +18,7 @@ Environment configuration
    choose *EMC hardware monitoring extension for Zabbix plugin*, select the
    plugin checkbox and optionally fill in *EMC hardware to monitor* parameter:
 
-   .. image:: images/settings.png
+   .. image:: ../images/settings.png
       :width: 100%
 
    When you add your hardware to the *EMC hardware to monitor* comma separated
@@ -54,7 +54,7 @@ To test if everything is configured properly, follow these steps:
 
        It is set in the SNMP trap daemon for Zabbix plugin Settings in Fuel UI:
 
-   .. image:: images/snmptrapd_settings.png
+   .. image:: ../images/snmptrapd_settings.png
       :width: 100%
 
    *<zabbix_VIP_address>*
@@ -80,20 +80,20 @@ To test if everything is configured properly, follow these steps:
    Plugins Catalog <https://www.mirantis.com/products/
    openstack-drivers-and-plugins/fuel-plugins/>`_):
 
-   .. image:: images/issues.png
+   .. image:: ../images/issues.png
       :width: 100%
 
    When you click on a date in the *Last change* column of one of the issues,
    you will see the **Events** page with list of events with the same type:
 
-   .. image:: images/events.png
+   .. image:: ../images/events.png
       :width: 100%
 
    To see a full description of the event, you have to click on event’s
    description and choose *History*, then you will see a **History** page with
    a full event description:
 
-   .. image:: images/history.png
+   .. image:: ../images/history.png
       :width: 100%
 
 3. After clicking *Configuration* tab and selecting *Hosts* option, you will
@@ -101,7 +101,7 @@ To test if everything is configured properly, follow these steps:
    host for every hardware listed in the *EMC hardware to monitor* plugin
    parameter:
 
-   .. image:: images/hosts.png
+   .. image:: ../images/hosts.png
       :width: 100%
 
 Hardware setup
@@ -126,6 +126,6 @@ parameters on your hardware:
 2. SNMP community - set the same value as in the *SNMP community* parameter
    from the SNMP trap daemon for Zabbix plugin settings:
 
-   .. image:: images/snmptrapd_settings.png
+   .. image:: ../images/snmptrapd_settings.png
       :width: 100%
 
