@@ -1,9 +1,10 @@
 attributes:
   metadata:
     restrictions:
-      - condition: "settings:zabbix_snmptrapd.metadata.enabled == false"
+      - condition: "settings:zabbix_snmptrapd == null or settings:zabbix_snmptrapd.metadata.enabled == false"
         action: disable
         message: This plugin requires SNMP trap daemon for Zabbix plugin
+        strict: false
   hosts:
     value: ""
     label: "EMC hardware to monitor"
