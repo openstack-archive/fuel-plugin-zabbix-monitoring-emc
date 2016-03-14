@@ -1,6 +1,6 @@
-===================================================
-EMC hardware monitoring extension for Zabbix plugin
-===================================================
+================================================================
+Guide to the EMC hardware monitoring extension for Zabbix plugin
+================================================================
 
 EMC hardware monitoring extension plugin extends Zabbix plugin functionality
 by adding monitoring of incoming SNMP traps sent from EMC VNX arrays via

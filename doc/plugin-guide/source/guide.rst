@@ -2,19 +2,45 @@
 User Guide
 ==========
 
+Important preliminary notes
+===========================
+
+- It is highly recommended to do a network verification check prior
+  to any deployment.
+- This plugin version only supports Ubuntu OS type.
+- You can also choose any supervisor and/or also change the
+  networking configuration according to your needs  but you can not use
+  the old legacy networking mode (nova-network) as this is not supported.
+- See Zabbix Plugin for Fuel Documentation for additional notes
+- See Zabbix SNMP Trap Daemon Plugin for Fuel Documentation for additional notes
+
+Known problems
+==============
+
+- `#1538617 <https://bugs.launchpad.net/fuel-plugins/+bug/1538617>`_:
+  Cross-plugin display restrictions for some plugins prevent Settings tab from opening.
+- See Zabbix Plugin for Fuel Documentation for additional problems
+- See Zabbix SNMP Trap Daemon Plugin for Fuel Documentation for additional problems
+
 Environment configuration
 =========================
 
-1. Create an environment. For more information about environment creation, see
+.. highlight:: none
+
+#. Create an environment. For more information about environment creation, see
    `Mirantis OpenStack User Guide <http://docs.mirantis.com/openstack/fuel
    /fuel-7.0/user-guide.html#create-a-new-openstack-environment>`_.
-2. Enable and configure Zabbix plugin for Fuel. For instructions, see Zabbix
+
+#. Enable and configure Zabbix plugin for Fuel. For instructions, see Zabbix
    Plugin Guide in the `Fuel Plugins Catalog <https://www.mirantis.com
    /products/openstack-drivers-and-plugins/fuel-plugins/>`_.
-3. Enable and configure SNMP trap daemon for Zabbix plugin. For instructions,
-   see Zabbix Plugin Guide in the `Fuel Plugins Catalog <https://www.mirantis
-   .com/products/openstack-drivers-and-plugins/fuel-plugins/>`_.
-4. Open *Settings* tab of the Fuel web UI and scroll the page down. On the left
+
+#. Enable and configure SNMP trap daemon for Zabbix plugin. For instructions,
+   see Zabbix Plugin Guide and Zabbix SNMP Trap Daemon Plugin Guide
+   in the `Fuel Plugins Catalog <https://www.mirantis.com/products/
+   openstack-drivers-and-plugins/fuel-plugins/>`_.
+
+#. Open *Settings* tab of the Fuel web UI and scroll the page down. On the left
    choose *EMC hardware monitoring extension for Zabbix plugin*, select the
    plugin checkbox and optionally fill in *EMC hardware to monitor* parameter:
 
@@ -22,15 +48,16 @@ Environment configuration
       :width: 100%
 
    When you add your hardware to the *EMC hardware to monitor* comma separated
-   list, then the plugin will automatically configure monitoring for these
-   hardware in Zabbix by doing following actions:
+   list, then the plugin will automatically configure monitoring
+   for this hardware in Zabbix by doing following actions:
 
    - create a Host with provided Name and IP address
    - link the EMC monitoring template to the Host
 
    If you leave the parameter empty, you will have to add your hardware to
    Zabbix manually.
-5. Adjust other environment settings to your requirements and deploy the
+
+#. Adjust other environment settings to your requirements and deploy the
    environment. For more information, see
    `Mirantis OpenStack User Guide <http://docs.mirantis.com/openstack/fuel
    /fuel-7.0/user-guide.html#create-a-new-openstack-environment>`_.
@@ -38,13 +65,12 @@ Environment configuration
 User Guide
 ==========
 
-To test if everything is configured properly, follow these steps:
+To test if everything is installed and configured properly, follow these steps:
 
-1. Generate an example SNMP trap by running the following command from any
-   node::
+#. Generate a SNMP test trap by running the following command from any node::
 
-       [root@node-46 ~]# snmptrap -v 1 -c <SNMP_community> \
-       <zabbix_VIP_address> '.1.3.6.1.4.1.1981' <host_ip_address> 6 6 '10' \
+       # snmptrap -v 1 -c <SNMP_community> <mgmt_VIP_address> \
+       '.1.3.6.1.4.1.1981' <host_ip_address> 6 6 '10' \
        .1.3.6.1.4.1.1981 s "null" .1.3.6.1.4.1.1981 s "null" \
        .1.3.6.1.4.1.1981 s "a37"
 
@@ -57,24 +83,23 @@ To test if everything is configured properly, follow these steps:
    .. image:: ../images/snmptrapd_settings.png
       :width: 100%
 
-   *<zabbix_VIP_address>*
+   *<mgmt_VIP_address>*
 
        If you don’t know the address, run the following command on any node::
 
-           [root@node-46 ~]# grep -A2 ^zbx_vip_mgmt /etc/astute.yaml
+	 # awk '/zbx_vip_mgmt/ {n=1} n==1 && /ipaddr/ {print;exit}' \
+	       /etc/astute.yaml | sed -e 's/.*: //'
 
        You should get the required VIP in the output::
 
-           zbx_vip_mgmt:
-             network_role: zabbix
-             ipaddr: 192.168.0.1
+	 192.168.0.3
 
    *<host_IP_address>*
 
        IP address of EMC hardware filled in *EMC hardware to monitor* parameter
 
 
-2. After several seconds of running the snmptrap command you should see a new
+#. After several seconds of running the snmptrap command you should see a new
    event in the Last 20 issues section of the Zabbix Dashboard (for information
    on how to login to Zabbix Web Interface see Zabbix Plugin Guide in the `Fuel
    Plugins Catalog <https://www.mirantis.com/products/
@@ -96,7 +121,7 @@ To test if everything is configured properly, follow these steps:
    .. image:: ../images/history.png
       :width: 100%
 
-3. After clicking *Configuration* tab and selecting *Hosts* option, you will
+#. After clicking *Configuration* tab and selecting *Hosts* option, you will
    see a list of hosts with linked monitoring templates. There should be one
    host for every hardware listed in the *EMC hardware to monitor* plugin
    parameter:
@@ -111,19 +136,18 @@ You have to configure your hardware to enable SNMP traps sending. To do this,
 refer to your hardware’s manual. Generally, you have to set these two
 parameters on your hardware:
 
-1. SNMP manager - set to Zabbix VIP address of your environment
+#. SNMP manager - set to Zabbix VIP address of your environment
 
    If you don’t know the address, run the following command on any node::
 
-       [root@node-46 ~]# grep -A2 ^zbx_vip_mgmt /etc/astute.yaml
+     # awk '/zbx_vip_mgmt/ {n=1} n==1 && /ipaddr/ {print;exit}' \
+     /etc/astute.yaml | sed -e 's/.*: //'
 
    You should get the required VIP in the output::
 
-       zbx_vip_mgmt:
-         network_role: zabbix
-         ipaddr: 192.168.0.1
+     192.168.0.3
 
-2. SNMP community - set the same value as in the *SNMP community* parameter
+#. SNMP community - set the same value as in the *SNMP community* parameter
    from the SNMP trap daemon for Zabbix plugin settings:
 
    .. image:: ../images/snmptrapd_settings.png
