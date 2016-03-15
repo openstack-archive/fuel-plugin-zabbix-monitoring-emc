@@ -17,8 +17,6 @@ Important preliminary notes
 Known problems
 ==============
 
-- `#1538617 <https://bugs.launchpad.net/fuel-plugins/+bug/1538617>`_:
-  Cross-plugin display restrictions for some plugins prevent Settings tab from opening.
 - See Zabbix Plugin for Fuel Documentation for additional problems
 - See Zabbix SNMP Trap Daemon Plugin for Fuel Documentation for additional problems
 

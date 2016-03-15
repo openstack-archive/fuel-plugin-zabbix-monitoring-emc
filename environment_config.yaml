@@ -1,8 +1,8 @@
 attributes:
   metadata:
     restrictions:
-      - condition: "settings:zabbix_snmptrapd == null or settings:zabbix_snmptrapd.metadata.enabled == false"
-        action: disable
+      - condition: "settings:zabbix_snmptrapd == null or settings:zabbix_snmptrapd.metadata.enabled == false or cluster:net_provider != 'neutron'"
+        action: "hide"
         message: This plugin requires SNMP trap daemon for Zabbix plugin
         strict: false
   hosts:

@@ -35,6 +35,6 @@ steps:
     id | name                      | version  | package_version
     ---|---------------------------|----------|----------------
     1  | zabbix_monitoring         | 2.5.0    | 3.0.0
-    2  | zabbix_snmptrapd          | 1.0.1    | 2.0.0
-    3  | zabbix_monitoring_emc     | 1.0.1    | 2.0.0
+    2  | zabbix_snmptrapd          | 1.0.1    | 3.0.0
+    3  | zabbix_monitoring_emc     | 1.0.1    | 3.0.0
 
