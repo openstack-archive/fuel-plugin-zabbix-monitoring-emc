@@ -14,11 +14,11 @@ items and triggers and by creating Hosts for each EMC VNX array.
 Requirements
 ============
 
-================================== ===============
+================================== ================
 Requirement                        Version/Comment
-================================== ===============
-Fuel                               7.0 and 8.0
-Zabbix plugin for Fuel             2.5.0
-SNMP trap daemon for Zabbix plugin 1.0.1
-================================== ===============
+================================== ================
+Fuel                               7.0, 8.0 and 9.0
+Zabbix plugin for Fuel             2.6.0
+SNMP trap daemon for Zabbix plugin 1.1.0
+================================== ================
 
