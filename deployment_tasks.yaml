@@ -1,2 +1,37 @@
----
-[]
+- id: zbx-configure-emcsnmp-services
+  type: puppet
+  version: 2.0.0
+  # We use last task of Zabbix SNMP Trap Daemon plugin deployment as an anchor
+  # to order the post-deployment tasks executed
+  # by this plugin. The dependency chain is:
+  # (Zabbix tasks) -> (Zabbix SNMP Trap Daemon tasks) -> (SNMP EMC plugin tasks)
+  requires: [post_deployment_start, zbx-configure-snmptrapd-services]
+  required_for: [post_deployment_end]
+  role: ['primary-controller']
+  # The crontrollers configuration shouldn't start before primary is finished
+  # hence the cross-depends parameter that is required when running in
+  # a task-based deployment mode.
+  cross-depends:
+    - name: zbx-configure-snmptrapd-services
+      role: [primary-controller]
+  parameters:
+    puppet_manifest: puppet/manifests/zabbix_config.pp
+    puppet_modules: puppet/modules:/etc/puppet/modules:../zabbix_monitoring-2.5/puppet/modules
+    timeout: 300
+
+- id: zbx-configure-emcsnmptt-services
+  type: puppet
+  version: 2.0.0
+  requires: [post_deployment_start, zbx-configure-emcsnmp-services]
+  required_for: [post_deployment_end]
+  role: ['primary-controller', 'controller']
+  # The crontrollers configuration shouldn't start before primary is finished
+  # hence the cross-depends parameter that is required when running in
+  # a task-based deployment mode.
+  cross-depends:
+    - name: zbx-configure-emcsnmp-services
+      role: [primary-controller]
+  parameters:
+    puppet_manifest: puppet/manifests/snmptt_config.pp
+    puppet_modules: puppet/modules:/etc/puppet/modules:../zabbix_monitoring-2.5/puppet/modules
+    timeout: 300
