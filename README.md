@@ -13,11 +13,11 @@ appropriate items and triggers and by creating Hosts for each EMC VNX array.
 Requirements
 ------------
 
-| Requirement                        | Version/Comment             |
-|:-----------------------------------|:----------------------------|
-| Mirantis OpenStack compatibility   | 7.0, 8.0, 9.0, 9.1, and 9.2 |
-| Zabbix plugin for Fuel             | 2.5.2                       |
-| SNMP trap daemon for Zabbix plugin | 1.1.1                       |
+| Requirement                        | Version/Comment                  |
+|:-----------------------------------|:---------------------------------|
+| Mirantis OpenStack compatibility   | 7.0, 8.0, 9.0, 9.1, 9.2 and 10.0 |
+| Zabbix plugin for Fuel             | 2.5.3                            |
+| SNMP trap daemon for Zabbix plugin | 1.1.2                            |
 
 Installation Guide
 ==================
@@ -41,22 +41,22 @@ follow these steps:
     that. If you do not have the Fuel Master node yet, see
     [Quick Start Guide](https://software.mirantis.com/quick-start/) :
 
-        # scp zabbix_monitoring_emc-1.1-1.1.1-1.noarch.rpm \
+        # scp zabbix_monitoring_emc-1.1-1.1.2-1.noarch.rpm \
           root@<Fuel_Master_ip>:/tmp
 
 5. Install the plugin:
 
         # cd /tmp
-        # fuel plugins --install zabbix_monitoring_emc-1.1-1.1.1-1.noarch.rpm
+        # fuel plugins --install zabbix_monitoring_emc-1.1-1.1.2-1.noarch.rpm
 
 6. Check if the plugin was installed successfully:
 
         # fuel plugins
         id | name                  | version | package_version
         ---|-----------------------|---------|----------------
-        1  | zabbix_monitoring     | 2.5.2   | 3.0.0
-        2  | zabbix_snmptrapd      | 1.1.1   | 3.0.0
-        3  | zabbix_monitoring_emc | 1.1.1   | 3.0.0
+        1  | zabbix_monitoring     | 2.5.3   | 3.0.0
+        2  | zabbix_snmptrapd      | 1.1.2   | 3.0.0
+        3  | zabbix_monitoring_emc | 1.1.2   | 3.0.0
 
 For more information and instructions, see the EMC hardware monitoring extension
 for Zabbix plugin Guide in the

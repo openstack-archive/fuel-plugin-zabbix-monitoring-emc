@@ -117,9 +117,9 @@ Work Items
 Dependencies
 ============
 
-* Fuel 7.0, 8.0, 9.0, 9.1, and 9.2
-* Zabbix plugin for Fuel 2.5.2
-* SNMP trap daemon for Zabbix plugin 1.1.1
+* Fuel 7.0, 8.0, 9.0, 9.1, 9.2 and 10.0
+* Zabbix plugin for Fuel 2.5.3
+* SNMP trap daemon for Zabbix plugin 1.1.2
 
 Testing
 =======
