@@ -26,11 +26,11 @@ steps:
    Fuel Master node using ssh. If you do not have the Fuel Master node yet,
    see `Quick Start Guide <https://software.mirantis.com/quick-start/>`_::
 
-    # scp zabbix_monitoring-2.5-2.5.1-1.noarch.rpm \
+    # scp zabbix_monitoring-2.5-2.5.2-1.noarch.rpm \
       root@<Fuel_Master_IP>:/tmp
-    # scp zabbix_snmptrapd-1.1-1.1.0-1.noarch.rpm \
+    # scp zabbix_snmptrapd-1.1-1.1.1-1.noarch.rpm \
       root@<Fuel_Master_IP>:/tmp
-    # scp zabbix_monitoring_emc-1.1-1.1.0-1.noarch.rpm \
+    # scp zabbix_monitoring_emc-1.1-1.1.1-1.noarch.rpm \
       root@<The_Fuel_Master_node_IP>:/tmp
 
 #. Log into the Fuel Master node. Install each of the three plugins using
@@ -38,20 +38,20 @@ steps:
 
     # cd /tmp
     # fuel plugins --install \
-      zabbix_monitoring-2.5-2.5.1-1.noarch.rpm
+      zabbix_monitoring-2.5-2.5.2-1.noarch.rpm
     # fuel plugins --install \
-      zabbix_snmptrapd-1.1-1.1.0-1.noarch.rpm
+      zabbix_snmptrapd-1.1-1.1.1-1.noarch.rpm
     # fuel plugins --install \
-      zabbix_monitoring_emc-1.1-1.1.0-1.noarch.rpm
+      zabbix_monitoring_emc-1.1-1.1.1-1.noarch.rpm
 
 #. Make sure the plugins were installed correctly::
 
     # fuel plugins
     id | name                      | version  | package_version
     ---|---------------------------|----------|----------------
-    1  | zabbix_monitoring         | 2.5.1    | 3.0.0
-    2  | zabbix_snmptrapd          | 1.1.0    | 3.0.0
-    3  | zabbix_monitoring_emc     | 1.1.0    | 3.0.0
+    1  | zabbix_monitoring         | 2.5.2    | 3.0.0
+    2  | zabbix_snmptrapd          | 1.1.1    | 3.0.0
+    3  | zabbix_monitoring_emc     | 1.1.1    | 3.0.0
 
 |
 
@@ -65,7 +65,7 @@ follow these steps:
 
 #. Uninstall the plugin::
 
-     # fuel plugins --remove zabbix_monitoring_emc==1.1.0
+     # fuel plugins --remove zabbix_monitoring_emc==1.1.1
 
 #. Check if the plugin was uninstalled successfully::
 
