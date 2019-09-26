@@ -1,8 +1,0 @@
-.build/
-*.noarch.rpm
-repositories/centos/*.rpm
-repositories/ubuntu/*.deb
-.bundled_gems/
-.bundle/
-Gemfile.lock
-.tox/
